@@ -28,7 +28,7 @@ jobs:
 
       - name: 
         run: Activate virtual environment
-          source .venv/bin/activate
+          source .venv/bin/activate.bash
           uv sync --active
 
       - name: Run test with coverage
