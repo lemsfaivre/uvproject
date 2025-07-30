@@ -26,8 +26,8 @@ jobs:
         run: |
           uv venv
 
-      - name: 
-        run: Activate virtual environment
+      - name:  Activate virtual environment
+        run: |
           source .venv/bin/activate.bash
           uv sync --active
 
