@@ -34,5 +34,6 @@ jobs:
       - name: Run test with coverage
         run: |
           echo $PATH
+          export PATH=.venv/bin:$PATH
           coverage run -m pytest
           coverage report
