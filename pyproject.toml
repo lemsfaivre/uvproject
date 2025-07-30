@@ -1,0 +1,45 @@
+[project]
+name = "uvproject"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "coverage>=7.10.1",
+    "httpx>=0.28.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest-httpx>=0.35.0",
+    "ruff>=0.12.7",
+]
+
+[tool.ruff]
+lint.select = [
+    "E",   # Pycodestyle errors
+    "F",   # Pyflakes
+    "B",   # Bugbear (code safety)
+    "I",   # Isort (import sorting)
+    "UP",  # Pyupgrade (modernisation)
+    "C4",  # Comprehensions (flake8 Comprehension)
+    "N",   # pep8 naming
+    "SIM", # Simplify (flake8 simplify)
+    "TID", # Tidy imports (unused, ungrouped)
+    "PERF" # Performance suggestions
+]
+line-length = 120
+
+[lint.per-file-ignores]
+"tests/*.py" = ["S101"]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+skip-magic-trailing-comma = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
